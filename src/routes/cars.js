@@ -4,6 +4,7 @@ const Car = require('../models/car');
 const toLowerCase = require('../helpers/toLowerCase');
 
 router.get('/', async (req, res) => {
+    toLowerCase(req.query);
     const { make, model, year, priceMin, priceMax, fuelType, transmission, bodyType, color, page = 1, limit = 10 } = req.query;
     const query = {};
     
